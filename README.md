@@ -36,7 +36,7 @@ https://github.com/hellzerg/mint/blob/master/IMAGES.md
 
 ## Compatibility
 * **Framework**: .NET Framework 4.8
-* **OS**: Windows 7, 8.1, 10, 11
+* **OS**: Windows 10, 11 (Tested)
 
 ## Details
 * **Latest version**: 1.8
