@@ -9,7 +9,7 @@ A minimal app launcher residing in your taskbar.
 > **Note:** This repository is a maintained fork of [hellzerg/mint](https://github.com/hellzerg/mint) with updated features, bug fixes, and modern quality-of-life enhancements.
 
 <p align="center">
-    <a href="https://github.com/hellzerg/mint/releases/download/1.8/Mint-1.8.exe" target="_blank">
+    <a href="https://github.com/rexx-oss/mint/releases/download/v1.8/Mint-Release.zip" target="_blank">
         <img src="download-button.png">
     </a>
 </p> 
