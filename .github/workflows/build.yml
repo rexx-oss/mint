@@ -1,0 +1,37 @@
+name: Build Mint
+
+on:
+  push:
+    branches: [ "master", "main" ]
+  pull_request:
+    branches: [ "master", "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Setup NuGet
+      uses: nuget/setup-nuget@v2
+
+    - name: Restore NuGet Packages
+      run: nuget restore Mint.sln
+
+    - name: Build Mint with MSBuild (Force .NET 4.8)
+      run: msbuild Mint.sln /p:Configuration=Release /p:Platform="Any CPU" /p:TargetFrameworkVersion=v4.8
+
+    - name: Upload Mint.exe Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: Mint-Release
+        path: Mint/bin/Release/Mint.exe
+        if-no-files-found: error
