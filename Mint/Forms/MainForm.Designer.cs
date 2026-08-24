@@ -1,4 +1,4 @@
-﻿namespace Mint
+namespace Mint
 {
     partial class MainForm
     {
@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.topPanel = new System.Windows.Forms.Panel();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblversion = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,8 +44,6 @@
             this.radioZerg = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.panelApps = new System.Windows.Forms.Panel();
-            this.btnSort = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.helperMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,8 +53,9 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.moveUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.moveDownToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.panelAddApp = new System.Windows.Forms.Panel();
             this.btnGroups = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -65,6 +63,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnLocate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.txtAppTitle = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -75,6 +74,9 @@
             this.checkAutoStart = new Mint.MoonCheck();
             this.listApps = new Mint.MoonList();
             this.groupBox = new Mint.MoonBox();
+            this.txtCustomIcon = new System.Windows.Forms.TextBox();
+            this.btnLocateIcon = new System.Windows.Forms.Button();
+            this.lblCustomIcon = new System.Windows.Forms.Label();
             this.topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.botPanel.SuspendLayout();
@@ -90,7 +92,6 @@
             this.topPanel.AllowDrop = true;
             this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.topPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.topPanel.Controls.Add(this.btnUpdate);
             this.topPanel.Controls.Add(this.pictureBox1);
             this.topPanel.Controls.Add(this.lblversion);
             this.topPanel.Controls.Add(this.label2);
@@ -100,25 +101,6 @@
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(618, 62);
             this.topPanel.TabIndex = 8;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnUpdate.FlatAppearance.BorderSize = 0;
-            this.btnUpdate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(531, 15);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 31);
-            this.btnUpdate.TabIndex = 81;
-            this.btnUpdate.Tag = "themeable";
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // pictureBox1
             // 
@@ -182,10 +164,10 @@
             this.panelOptions.Controls.Add(this.radioOcean);
             this.panelOptions.Controls.Add(this.radioZerg);
             this.panelOptions.Controls.Add(this.label6);
-            this.panelOptions.Location = new System.Drawing.Point(10, 346);
+            this.panelOptions.Location = new System.Drawing.Point(10, 370);
             this.panelOptions.Margin = new System.Windows.Forms.Padding(2);
             this.panelOptions.Name = "panelOptions";
-            this.panelOptions.Size = new System.Drawing.Size(296, 200);
+            this.panelOptions.Size = new System.Drawing.Size(296, 176);
             this.panelOptions.TabIndex = 91;
             // 
             // radioMinimal
@@ -291,54 +273,13 @@
             // 
             this.panelApps.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.panelApps.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelApps.Controls.Add(this.btnSort);
-            this.panelApps.Controls.Add(this.btnEdit);
             this.panelApps.Controls.Add(this.panel2);
             this.panelApps.Controls.Add(this.label3);
-            this.panelApps.Controls.Add(this.btnDelete);
             this.panelApps.Location = new System.Drawing.Point(310, 14);
             this.panelApps.Margin = new System.Windows.Forms.Padding(2);
             this.panelApps.Name = "panelApps";
             this.panelApps.Size = new System.Drawing.Size(296, 532);
             this.panelApps.TabIndex = 90;
-            // 
-            // btnSort
-            // 
-            this.btnSort.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnSort.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnSort.FlatAppearance.BorderSize = 0;
-            this.btnSort.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnSort.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnSort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSort.ForeColor = System.Drawing.Color.White;
-            this.btnSort.Location = new System.Drawing.Point(176, 8);
-            this.btnSort.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSort.Name = "btnSort";
-            this.btnSort.Size = new System.Drawing.Size(100, 23);
-            this.btnSort.TabIndex = 92;
-            this.btnSort.Tag = "themeable";
-            this.btnSort.Text = "Sort by A-Z";
-            this.btnSort.UseVisualStyleBackColor = false;
-            this.btnSort.Click += new System.EventHandler(this.btnSort_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnEdit.FlatAppearance.BorderSize = 0;
-            this.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(149, 496);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(84, 26);
-            this.btnEdit.TabIndex = 84;
-            this.btnEdit.Tag = "themeable";
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // panel2
             // 
@@ -346,7 +287,7 @@
             this.panel2.Location = new System.Drawing.Point(16, 35);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(260, 452);
+            this.panel2.Size = new System.Drawing.Size(260, 482);
             this.panel2.TabIndex = 83;
             // 
             // helperMenu
@@ -358,13 +299,15 @@
             this.editToolStripMenuItem,
             this.locateFileToolStripMenuItem,
             this.toolStripSeparator1,
+            this.moveUpToolStripMenuItem,
+            this.moveDownToolStripMenuItem,
             this.sortByAZToolStripMenuItem,
             this.toolStripSeparator2,
             this.deleteToolStripMenuItem,
             this.deleteAllToolStripMenuItem});
             this.helperMenu.Name = "launcherMenu";
             this.helperMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.helperMenu.Size = new System.Drawing.Size(153, 136);
+            this.helperMenu.Size = new System.Drawing.Size(153, 180);
             // 
             // editToolStripMenuItem
             // 
@@ -421,6 +364,24 @@
             this.deleteAllToolStripMenuItem.Text = "Delete all";
             this.deleteAllToolStripMenuItem.Click += new System.EventHandler(this.deleteAllToolStripMenuItem_Click);
             // 
+            // moveUpToolStripMenuItem
+            // 
+            this.moveUpToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moveUpToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.moveUpToolStripMenuItem.Name = "moveUpToolStripMenuItem";
+            this.moveUpToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.moveUpToolStripMenuItem.Text = "Move Up";
+            this.moveUpToolStripMenuItem.Click += new System.EventHandler(this.moveUpToolStripMenuItem_Click);
+            // 
+            // moveDownToolStripMenuItem
+            // 
+            this.moveDownToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moveDownToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.moveDownToolStripMenuItem.Name = "moveDownToolStripMenuItem";
+            this.moveDownToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.moveDownToolStripMenuItem.Text = "Move Down";
+            this.moveDownToolStripMenuItem.Click += new System.EventHandler(this.moveDownToolStripMenuItem_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -434,25 +395,6 @@
             this.label3.Tag = "themeable";
             this.label3.Text = "Apps:";
             // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(61, 496);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(84, 26);
-            this.btnDelete.TabIndex = 81;
-            this.btnDelete.Tag = "themeable";
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
             // panelAddApp
             // 
             this.panelAddApp.AllowDrop = true;
@@ -465,15 +407,19 @@
             this.panelAddApp.Controls.Add(this.label7);
             this.panelAddApp.Controls.Add(this.btnLocate);
             this.panelAddApp.Controls.Add(this.btnAdd);
+            this.panelAddApp.Controls.Add(this.btnClear);
             this.panelAddApp.Controls.Add(this.txtAppTitle);
             this.panelAddApp.Controls.Add(this.label1);
             this.panelAddApp.Controls.Add(this.label5);
             this.panelAddApp.Controls.Add(this.txtAppLink);
             this.panelAddApp.Controls.Add(this.label4);
+            this.panelAddApp.Controls.Add(this.lblCustomIcon);
+            this.panelAddApp.Controls.Add(this.txtCustomIcon);
+            this.panelAddApp.Controls.Add(this.btnLocateIcon);
             this.panelAddApp.Location = new System.Drawing.Point(10, 14);
             this.panelAddApp.Margin = new System.Windows.Forms.Padding(2);
             this.panelAddApp.Name = "panelAddApp";
-            this.panelAddApp.Size = new System.Drawing.Size(296, 328);
+            this.panelAddApp.Size = new System.Drawing.Size(296, 350);
             this.panelAddApp.TabIndex = 89;
             // 
             // btnGroups
@@ -562,15 +508,34 @@
             this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(95, 264);
+            this.btnAdd.Location = new System.Drawing.Point(45, 305);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(104, 31);
+            this.btnAdd.Size = new System.Drawing.Size(100, 31);
             this.btnAdd.TabIndex = 80;
             this.btnAdd.Tag = "themeable";
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(150, 305);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(100, 31);
+            this.btnClear.TabIndex = 82;
+            this.btnClear.Tag = "themeable";
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // txtAppTitle
             // 
@@ -669,6 +634,7 @@
             // 
             // listApps
             // 
+            this.listApps.AllowDrop = true;
             this.listApps.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.listApps.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listApps.ContextMenuStrip = this.helperMenu;
@@ -681,10 +647,13 @@
             this.listApps.Location = new System.Drawing.Point(0, 0);
             this.listApps.Margin = new System.Windows.Forms.Padding(2);
             this.listApps.Name = "listApps";
-            this.listApps.Size = new System.Drawing.Size(260, 452);
+            this.listApps.Size = new System.Drawing.Size(260, 482);
             this.listApps.TabIndex = 78;
             this.listApps.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listApps_MouseDoubleClick);
             this.listApps.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listApps_MouseDown);
+            this.listApps.MouseMove += new System.Windows.Forms.MouseEventHandler(this.listApps_MouseMove);
+            this.listApps.DragOver += new System.Windows.Forms.DragEventHandler(this.listApps_DragOver);
+            this.listApps.DragDrop += new System.Windows.Forms.DragEventHandler(this.listApps_DragDrop);
             // 
             // groupBox
             // 
@@ -699,6 +668,49 @@
             this.groupBox.Name = "groupBox";
             this.groupBox.Size = new System.Drawing.Size(206, 25);
             this.groupBox.TabIndex = 92;
+            // 
+            // txtCustomIcon
+            // 
+            this.txtCustomIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.txtCustomIcon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCustomIcon.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomIcon.ForeColor = System.Drawing.Color.White;
+            this.txtCustomIcon.Location = new System.Drawing.Point(14, 263);
+            this.txtCustomIcon.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCustomIcon.Name = "txtCustomIcon";
+            this.txtCustomIcon.Size = new System.Drawing.Size(230, 25);
+            this.txtCustomIcon.TabIndex = 95;
+            // 
+            // btnLocateIcon
+            // 
+            this.btnLocateIcon.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnLocateIcon.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnLocateIcon.FlatAppearance.BorderSize = 0;
+            this.btnLocateIcon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnLocateIcon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
+            this.btnLocateIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLocateIcon.ForeColor = System.Drawing.Color.White;
+            this.btnLocateIcon.Location = new System.Drawing.Point(247, 263);
+            this.btnLocateIcon.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLocateIcon.Name = "btnLocateIcon";
+            this.btnLocateIcon.Size = new System.Drawing.Size(31, 25);
+            this.btnLocateIcon.TabIndex = 96;
+            this.btnLocateIcon.Tag = "themeable";
+            this.btnLocateIcon.Text = "...";
+            this.btnLocateIcon.UseVisualStyleBackColor = false;
+            this.btnLocateIcon.Click += new System.EventHandler(this.btnLocateIcon_Click);
+            // 
+            // lblCustomIcon
+            // 
+            this.lblCustomIcon.AutoSize = true;
+            this.lblCustomIcon.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomIcon.ForeColor = System.Drawing.Color.Silver;
+            this.lblCustomIcon.Location = new System.Drawing.Point(10, 242);
+            this.lblCustomIcon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCustomIcon.Name = "lblCustomIcon";
+            this.lblCustomIcon.Size = new System.Drawing.Size(147, 19);
+            this.lblCustomIcon.TabIndex = 97;
+            this.lblCustomIcon.Text = "Custom Icon (optional):";
             // 
             // MainForm
             // 
@@ -747,8 +759,6 @@
         private System.Windows.Forms.Panel botPanel;
         private MoonList listApps;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.NotifyIcon launcherIcon;
         private System.Windows.Forms.ContextMenuStrip launcherMenu;
@@ -760,6 +770,8 @@
         private System.Windows.Forms.Panel panelApps;
         private System.Windows.Forms.Panel panelAddApp;
         private System.Windows.Forms.Button btnLocate;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Panel panelOptions;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RadioButton radioMinimal;
@@ -769,11 +781,8 @@
         private System.Windows.Forms.RadioButton radioOcean;
         private System.Windows.Forms.RadioButton radioZerg;
         private MoonCheck checkAutoStart;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.TextBox txtParams;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnSort;
         private System.Windows.Forms.Label label8;
         private MoonBox groupBox;
         private System.Windows.Forms.Button btnGroups;
@@ -785,6 +794,12 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteAllToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem moveUpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem moveDownToolStripMenuItem;
+
+        // Declarations for the added components
+        private System.Windows.Forms.TextBox txtCustomIcon;
+        private System.Windows.Forms.Button btnLocateIcon;
+        private System.Windows.Forms.Label lblCustomIcon;
     }
 }
-
