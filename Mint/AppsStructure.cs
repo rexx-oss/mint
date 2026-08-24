@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Mint
@@ -20,9 +20,11 @@ namespace Mint
     [Serializable]
     public class App
     {
+        public Guid Id { get; set; } = Guid.NewGuid();
         public string AppTitle { get; set; }
         public string AppLink { get; set; }
         public string AppGroup { get; set; }
         public string AppParams { get; set; }
+        public string CustomIconPath { get; set; }
     }
 }
